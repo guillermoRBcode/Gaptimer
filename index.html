@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Liminal Gap Timer</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 20vh;
+        }
+
+        h1 {
+            font-size: 30px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        function startTimer() {
+            // Generate a random time interval between 5 and 15 seconds (in milliseconds)
+            var interval = Math.floor(Math.random() * 10000) + 5000;
+
+            setTimeout(function() {
+                // Play the sound
+                var audio = new Audio('sound.mp3');
+                audio.play();
+
+                // Show message after sound playback
+                setTimeout(function() {
+                    alert("During this micro rest, your brain's hippocampus undergoes replay, enhancing learning and memory.");
+                }, 1000);
+
+                // Repeat the process
+                setTimeout(startTimer, 2000);
+            }, interval);
+        }
+    </script>
+</head>
+<body>
+    <h1>Liminal Gap Timer</h1>
+    <button onclick="startTimer()">Start Timer</button>
+</body>
+</html>
